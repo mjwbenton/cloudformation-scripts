@@ -1,0 +1,13 @@
+{
+  "name": "@mattb/cloudformation-scripts",
+  "version": "0.0.1",
+  "description": "Scripts for handling stacks in cloudformation",
+  "bin": {
+    "cf-create-stack": "./create-stack.sh",
+    "cf-update-stack": "./update-stack.sh",
+    "cf-update-files": "./update-files.sh"
+  },
+  "scripts": {},
+  "author": "m@mattb.tech",
+  "license": "MIT"
+}
