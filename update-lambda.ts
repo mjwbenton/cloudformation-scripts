@@ -51,8 +51,7 @@ function createZipFile(fileName: string): Promise<void> {
         })
         fileStream.on('close', resolve);
         archive.pipe(fileStream);
-        archive.directory("src/", "src");
-        archive.directory("node_modules/", "node_modules");
+        archive.directory(".", false);
         archive.finalize();
     });
 }
