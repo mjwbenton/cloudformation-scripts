@@ -5,6 +5,7 @@
   "bin": {
     "cf-create-stack": "./create-stack.sh",
     "cf-update-stack": "./update-stack.sh",
+    "cf-deploy-stack": "./deploy-stack.sh",
     "cf-update-files": "./update-files.sh",
     "cf-update-lambda": "./update-lambda.sh"
   },
