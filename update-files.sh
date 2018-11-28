@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-while getopts "b:d:p:" opt; do
+while getopts "b:d:p:f:" opt; do
     case "$opt" in
         b)
             bucket=$OPTARG;;
@@ -8,9 +8,14 @@ while getopts "b:d:p:" opt; do
             distribution=$OPTARG;;
         p)
             profile=$OPTARG;;
+        f)
+            folder=$OPTARG;;
     esac
 done
 
+if [[ ! -v folder ]]; then
+    folder="./output"
+fi
 if [[ ! -v bucket ]]; then
     echo "bucket (-b) required"
     exit
@@ -27,11 +32,11 @@ fi
 aws s3 sync --acl public-read --delete \
     --exclude "*" --include "*.html" \
     --content-type "text/html; charset=utf-8" --metadata-directive=REPLACE \
-    ./output s3://$bucket/ \
+    $folder s3://$bucket/ \
     --profile $profile
 aws s3 sync --acl public-read --delete \
     --include "*" --exclude "*.html" \
-    ./output s3://$bucket/ \
+    $folder s3://$bucket/ \
     --profile $profile
 
 aws cloudfront create-invalidation \
