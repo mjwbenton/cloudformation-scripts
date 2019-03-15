@@ -1,6 +1,6 @@
 {
-  "name": "@mattb/cloudformation-scripts",
-  "version": "0.0.1",
+  "name": "@mattb.tech/cloudformation-scripts",
+  "version": "1.0.2",
   "description": "Scripts for handling stacks in cloudformation",
   "bin": {
     "cf-create-stack": "./create-stack.sh",
@@ -9,14 +9,16 @@
     "cf-update-files": "./update-files.sh",
     "cf-update-lambda": "./update-lambda.sh"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
   "author": "m@mattb.tech",
   "license": "MIT",
   "devDependencies": {
     "@types/archiver": "^2.1.2",
     "@types/lodash.throttle": "^4.1.3",
     "@types/node": "^10.5.2",
-    "ts-node": "^7.0.0",
     "typescript": "^2.9.2"
   },
   "dependencies": {
@@ -24,5 +26,9 @@
     "aws-sdk": "^2.271.1",
     "commander": "^2.16.0",
     "lodash.throttle": "^4.1.1"
-  }
+  },
+  "files": [
+    "*.sh",
+    "*.js"
+  ]
 }
