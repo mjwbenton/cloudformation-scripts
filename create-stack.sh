@@ -30,7 +30,7 @@ echo "Creating $stack_name stack from $file"
 aws cloudformation create-stack \
     --profile=$profile \
     --stack-name=$stack_name \
-    --capabilities CAPABILITY_IAM \
+    --capabilities CAPABILITY_IAM CAPABILITY_AUTO_EXPAND\
     --template-body=file://$file
 
 echo "Waiting for $stack_name to complete"
