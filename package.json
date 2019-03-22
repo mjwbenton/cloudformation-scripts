@@ -1,6 +1,6 @@
 {
   "name": "@mattb.tech/cloudformation-scripts",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Scripts for handling stacks in cloudformation",
   "bin": {
     "cf-create-stack": "./create-stack.sh",
