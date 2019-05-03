@@ -1,5 +1,5 @@
 #!/bin/zsh
-#
+
 while getopts "s:p:f:" opt; do
     case "$opt" in
         s)
