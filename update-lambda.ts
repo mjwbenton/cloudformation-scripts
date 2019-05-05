@@ -1,13 +1,9 @@
 import commander = require("commander");
-import util = require("util");
 import fs = require("fs");
 import archiver = require("archiver");
 import throttle = require("lodash.throttle");
 
 const PROGRESS_THROTTLE_WAIT = 1000;
-const readFilePromise: (path: string) => Promise<Buffer> = util.promisify(
-  fs.readFile
-);
 
 interface CLIParams extends commander.Command {
   profile?: string;
