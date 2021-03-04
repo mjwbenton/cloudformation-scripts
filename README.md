@@ -1,5 +1,7 @@
 # cloudformation-scripts
 
+**Deprecated: I don't use this anymore. Use [CDK](https://github.com/aws/aws-cdk).**
+
 ```
 $ npm i @mattb.tech/cloudformation-scripts
 $ cf-create-stack -s stack-name -f template-file.yml -p aws-credentials-profile
